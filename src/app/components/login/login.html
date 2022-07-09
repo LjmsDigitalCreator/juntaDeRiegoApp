@@ -1,0 +1,69 @@
+<cTitle [title]="title" [subTitle]="subTitle"></cTitle>
+
+<ion-card *ngIf="flag;else app">
+    <ion-card-header>
+        <ion-card-subtitle>Ingrese su usuario y contraseña</ion-card-subtitle>
+        <ion-card-title>Ingreso al sistema</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+        <form action="" method="post">
+            <div>
+                <ion-item>
+                    <ion-label>Usuario</ion-label>
+                    <ion-input [formControl]="user" placeholder="Ingrese su usuario" required></ion-input>
+                </ion-item>
+            </div>
+            
+            <div class="mt-1">
+                <ion-item>
+                    <ion-label>Contraseña</ion-label>
+                    <ion-input [formControl]="password" type="password" placeholder="Ingrese su contraseña" required></ion-input>
+                </ion-item>
+            </div>
+
+            <div class="grid center mt-2">
+                <ion-button color="primary" (click)="LoadLogin()" >Ingresar</ion-button>
+            </div>
+        </form>
+    </ion-card-content>
+</ion-card>
+
+<ng-template #app>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>Ingrese la informacio&#769;n del medidor</ion-card-subtitle>
+            <ion-card-title>Info medidor</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+            <form action="" method="post">
+                <div>
+                    <ion-item>
+                        <ion-label>Nu&#769;mero del medidor</ion-label>
+                        <ion-input [formControl]="meter" placeholder="Ingrese el número del medidor" required></ion-input>
+                    </ion-item>
+                </div>
+    
+                <div class="mt-1">
+                    <ion-item>
+                        <ion-label>Lectura nueva</ion-label>
+                        <ion-input [formControl]="read" placeholder="Ingrese la nueva lectura" required></ion-input>
+                    </ion-item>
+                </div>
+    
+                <div class="grid center mt-2">
+                    <ion-button color="primary" (click)="NewAmount()">Registrar</ion-button>
+                </div>
+            </form>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-tab-bar>
+        <ion-tab-button>
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Inicio</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+
+</ng-template>

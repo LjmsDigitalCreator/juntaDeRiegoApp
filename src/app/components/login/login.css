@@ -1,0 +1,40 @@
+.mt-1{
+    margin-top: 8px;
+}
+
+.mt-2{
+    margin-top: 16px;
+}
+
+.mt-3{
+    margin-top: 24px;
+}
+
+.mt-4{
+    margin-top: 32px;
+}
+
+.mt-5{
+    margin-top: 40px;
+}
+
+.w-1{
+    width: 100%;
+}
+
+.w-2{
+    width: 50%;
+}
+
+.w-3{
+    width: 25%;
+}
+
+.grid{
+    display: grid;
+}
+
+.center{
+    align-self: center;
+}
+
