@@ -1,69 +1,93 @@
-<cTitle [title]="title" [subTitle]="subTitle"></cTitle>
-
-<ion-card *ngIf="flag;else app">
-    <ion-card-header>
-        <ion-card-subtitle>Ingrese su usuario y contraseña</ion-card-subtitle>
-        <ion-card-title>Ingreso al sistema</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-        <form action="" method="post">
-            <div>
-                <ion-item>
-                    <ion-label>Usuario</ion-label>
-                    <ion-input [formControl]="user" placeholder="Ingrese su usuario" required></ion-input>
-                </ion-item>
+<!-- <ion-content overflow-scroll="true" *ngIf="flag;else app"> -->        
+          <section id="hero" class="d-flex align-items-center" *ngIf="flag;else app">
+        
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos-delay="200">
+                  <h1>¡Bienvenido al trabajo nuevamente!</h1>
+                  <h2>Ingresa tu usuario y contraseña para acceder al sistema</h2>
+                  <article id="contact" class="contact">
+                    <div class="container2">
+              
+                      <div class="row">
+              
+                        <div class="col-lg-7 d-flex align-items-stretch">
+                          <form action="app/controller/login.php" method="POST" role="form" class="php-email-form">
+                            <div class="row">
+                              <div class="form-group col-md-6">
+                                <label for="name" class="text-black">Usuario</label>
+                                <input [formControl]="user" type="text" name="user" class="form-control text-black" id="user" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="name" class="text-black">Contraseña</label>
+                                <input [formControl]="password" type="password" class="form-control text-black" name="password" id="password" required>
+                              </div>
+                            </div>
+                            <div class="text-center"><button (click)="LoadLogin()">Ingresar</button></div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+               
+              </div>
             </div>
-            
-            <div class="mt-1">
-                <ion-item>
-                    <ion-label>Contraseña</ion-label>
-                    <ion-input [formControl]="password" type="password" placeholder="Ingrese su contraseña" required></ion-input>
-                </ion-item>
+          </section>
+        
+          <footer id="footer" class="justify-content-center">
+            <div class="container footer-bottom clearfix">
+                <div class="copyright">
+                &copy; Copyright <strong><span>Cristina Iza</span></strong>.
+                </div>
             </div>
-
-            <div class="grid center mt-2">
-                <ion-button color="primary" (click)="LoadLogin()" >Ingresar</ion-button>
-            </div>
-        </form>
-    </ion-card-content>
-</ion-card>
+        </footer>
+<!-- </ion-content> -->
 
 <ng-template #app>
-    <ion-card>
-        <ion-card-header>
-            <ion-card-subtitle>Ingrese la informacio&#769;n del medidor</ion-card-subtitle>
-            <ion-card-title>Info medidor</ion-card-title>
-        </ion-card-header>
-    
-        <ion-card-content>
-            <form action="" method="post">
-                <div>
-                    <ion-item>
-                        <ion-label>Nu&#769;mero del medidor</ion-label>
-                        <ion-input [formControl]="meter" placeholder="Ingrese el número del medidor" required></ion-input>
-                    </ion-item>
-                </div>
-    
-                <div class="mt-1">
-                    <ion-item>
-                        <ion-label>Lectura nueva</ion-label>
-                        <ion-input [formControl]="read" placeholder="Ingrese la nueva lectura" required></ion-input>
-                    </ion-item>
-                </div>
-    
-                <div class="grid center mt-2">
-                    <ion-button color="primary" (click)="NewAmount()">Registrar</ion-button>
-                </div>
-            </form>
-        </ion-card-content>
-    </ion-card>
 
-    <ion-tab-bar>
-        <ion-tab-button>
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Inicio</ion-label>
-        </ion-tab-button>
-    </ion-tab-bar>
+    <section id="hero" class="d-flex align-items-center" >
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos-delay="200">
+              <h1>Ingreso de informacio&#769;n</h1>
+              <h2>Ingrese los datos del medidor de agua</h2>
+              <article id="contact" class="contact">
+                <div class="container2">
+          
+                  <div class="row">
+          
+                    <div class="col-lg-7 d-flex align-items-stretch">
+                      <form action="app/controller/login.php" method="POST" role="form" class="php-email-form">
+                        <div class="row">
+                          <div class="form-group col-md-6">
+                            <label for="name" class="text-black">Nu&#769;mero del medidor</label>
+                            <input [formControl]="meter" type="text" class="form-control text-black" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="name" class="text-black">Nueva lectura</label>
+                            <input [formControl]="read" type="text" class="form-control text-black" required>
+                          </div>
+                        </div>
+                        <div class="text-center"><button (click)="NewAmount()">Ingresar</button></div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+    
+      <footer id="footer" class="justify-content-center">
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+            &copy; Copyright <strong><span>Cristina Iza</span></strong>.
+            </div>
+        </div>
+    </footer>
 
 </ng-template>

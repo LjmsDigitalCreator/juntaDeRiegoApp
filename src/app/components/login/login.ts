@@ -11,9 +11,6 @@ import { empty } from 'rxjs';
 })
 
 export class cLogin {
-    title = 'Bienvenido';
-    subTitle = 'Junta de Riego';
-
     flag = true;
 
     user = new FormControl('');

@@ -10,13 +10,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { cLogin } from './components/login/login';
-import { cTitle } from './components/title/title';
 
 @NgModule({
   declarations: [
     AppComponent,
     cLogin,
-    cTitle,
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
