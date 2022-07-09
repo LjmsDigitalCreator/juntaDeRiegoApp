@@ -1,93 +1,92 @@
-<!-- <ion-content overflow-scroll="true" *ngIf="flag;else app"> -->        
-          <section id="hero" class="d-flex align-items-center" *ngIf="flag;else app">
-        
-            <div class="container">
+<div *ngIf="flag;else app">
+<section id="hero-fullscreen" class="hero-fullscreen d-flex align-items-center">
+    <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
+      <h2 class="text-center"><span>Junta de Riego Belisario Quevedo</span></h2>
+      <p class="text-center">Ingresa el usuario y la contraseña para acceder al aplicativo</p>
+      
+      <div class="container contact">
+
+        <div class="row gy-5 gx-lg-5">
+
+          <div class="col-lg-8">
+            <form action="app/controller/login.php" method="post" role="form" class="php-email-form p-4">
               <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos-delay="200">
-                  <h1>¡Bienvenido al trabajo nuevamente!</h1>
-                  <h2>Ingresa tu usuario y contraseña para acceder al sistema</h2>
-                  <article id="contact" class="contact">
-                    <div class="container2">
-              
-                      <div class="row">
-              
-                        <div class="col-lg-7 d-flex align-items-stretch">
-                          <form action="app/controller/login.php" method="POST" role="form" class="php-email-form">
-                            <div class="row">
-                              <div class="form-group col-md-6">
-                                <label for="name" class="text-black">Usuario</label>
-                                <input [formControl]="user" type="text" name="user" class="form-control text-black" id="user" required>
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="name" class="text-black">Contraseña</label>
-                                <input [formControl]="password" type="password" class="form-control text-black" name="password" id="password" required>
-                              </div>
-                            </div>
-                            <div class="text-center"><button (click)="LoadLogin()">Ingresar</button></div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
+                <div class="col-md-6 form-group">
+                  <input [formControl]="user" type="text" name="user" class="form-control" id="user" placeholder="Usuario" required>
                 </div>
-               
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input [formControl]="password" type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required>
+                </div>
               </div>
-            </div>
-          </section>
-        
-          <footer id="footer" class="justify-content-center">
-            <div class="container footer-bottom clearfix">
-                <div class="copyright">
-                &copy; Copyright <strong><span>Cristina Iza</span></strong>.
-                </div>
-            </div>
-        </footer>
-<!-- </ion-content> -->
+              <div class="text-center"><button (click)="LoadLogin()">Ingresar</button></div>
+            </form>
+          </div>
+
+        </div>
+
+        </div>
+
+    </div>
+  </section>
+  <footer id="footer" class="footer">
+    <div class="footer-legal text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Jhonny Iza</span></strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+</div>
+
 
 <ng-template #app>
 
-    <section id="hero" class="d-flex align-items-center" >
-        
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos-delay="200">
-              <h1>Ingreso de informacio&#769;n</h1>
-              <h2>Ingrese los datos del medidor de agua</h2>
-              <article id="contact" class="contact">
-                <div class="container2">
+    <div>
+    <section id="hero-fullscreen" class="hero-fullscreen d-flex align-items-center">
+        <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
+          <h2 class="text-center"><span>Formulario del medidor</span></h2>
+          <p class="text-center">Aqui&#769; debe ingresar el nu&#769;mero del medidor y la nueva lectura</p>
           
+          <div class="container contact">
+    
+            <div class="row gy-5 gx-lg-5">
+    
+              <div class="col-lg-8">
+                <form action="app/controller/login.php" method="post" role="form" class="php-email-form p-4">
                   <div class="row">
-          
-                    <div class="col-lg-7 d-flex align-items-stretch">
-                      <form action="app/controller/login.php" method="POST" role="form" class="php-email-form">
-                        <div class="row">
-                          <div class="form-group col-md-6">
-                            <label for="name" class="text-black">Nu&#769;mero del medidor</label>
-                            <input [formControl]="meter" type="text" class="form-control text-black" required>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="name" class="text-black">Nueva lectura</label>
-                            <input [formControl]="read" type="text" class="form-control text-black" required>
-                          </div>
-                        </div>
-                        <div class="text-center"><button (click)="NewAmount()">Ingresar</button></div>
-                      </form>
+                    <div class="col-md-6 form-group">
+                      <input [formControl]="meter" type="text" name="user" class="form-control" placeholder="Número del medidor" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input [formControl]="read" type="text" class="form-control" placeholder="Nueva lectura" required>
                     </div>
                   </div>
-                </div>
-              </article>
+                  <div class="text-center"><button (click)="NewAmount()">Ingresar</button></div>
+                </form>
+              </div>
+    
             </div>
-           
-          </div>
+    
+            </div>
+    
         </div>
       </section>
     
-      <footer id="footer" class="justify-content-center">
-        <div class="container footer-bottom clearfix">
-            <div class="copyright">
-            &copy; Copyright <strong><span>Cristina Iza</span></strong>.
+      <footer id="footer" class="footer">
+        <div class="footer-legal text-center">
+          <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+              <div class="copyright">
+                &copy; Copyright <strong><span>Jhonny Iza</span></strong>.
+              </div>
             </div>
+          </div>
         </div>
-    </footer>
-
+    
+      </footer>
+    </div>
 </ng-template>
