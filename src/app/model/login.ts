@@ -5,3 +5,8 @@ export interface login{
     ROL:string,
     PASSWORD2:string
 }
+
+export interface document{
+    NAME:string,
+    DIR:string
+}
