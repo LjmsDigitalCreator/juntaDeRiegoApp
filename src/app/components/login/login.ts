@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Login } from '../../api/login';
 import { FormControl } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
-import { empty } from 'rxjs';
-
 @Component({
   selector: 'cLogin',
   templateUrl: 'login.html',
@@ -18,6 +16,10 @@ export class cLogin {
 
     meter = new FormControl('');
     read = new FormControl('');
+
+    file = new FormControl('');
+    documents;
+    data;
     
     constructor(public login:Login, public toastController: ToastController) {}
 
@@ -84,4 +86,35 @@ export class cLogin {
         }
       )
     }
+
+    public BringDocument(): void{
+      this.login.BringData(this.file.value).subscribe(
+        (response) =>{
+          console.log(response);
+          if((this.file.value != '') &&
+          (this.file.value != null) &&
+          (this.file.value != undefined)){
+            if(response.length != 0){
+              this.data = response;
+              this.presentToastOk('Datos obtenidos');
+            }else{
+              this.presentToastError('No se obtuvo la informacio&#769;n');
+            }
+          }else{
+            this.presentToastError('Debes ingresar todos los datos');
+          }
+        },
+        (error) =>{
+          console.log(error.status);
+          if((this.file.value != '') &&
+          (this.file.value != null) &&
+          (this.file.value != undefined)){
+            this.presentToastOk('Datos procesados y guardados');
+          }else{
+            this.presentToastError('Debes ingresar todos los datos');
+          }
+        }
+      )
+    }
+
 }

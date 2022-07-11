@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h1 class="text-center text-black">Sistema administrativo Belisario Quevedo</h1>
+                <h1 class="text-center text-black color-primary"><span>Sistema administrativo Belisario Quevedo</span></h1>
                 <h2 data-aos-delay="400" class="text-center text-black">Acceda al sistema con su usuario y clave</h2>
         
                     <section id="contact" class="contact">
@@ -53,8 +53,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 class="text-center text-black">Informacio&#769;n del medidor</h1>
-                    <h2 data-aos-delay="400" class="text-center text-black">Coloque los datos del medidor en las casillas correspondientes</h2>
+                    <h1 class="text-center text-black"><span>Administracio&#769;n</span></h1>
+                    <h2 data-aos-delay="400" class="text-center text-black">En este apartado podra&#769; realizar las operaciones del medidor o buscar documentos</h2>
             
                         <section id="contact" class="contact">
                 
@@ -75,6 +75,24 @@
                                             </div>
                                         </div>
                                     </form>
+                                    <form action="app/controller/login.php" method="post" class="php-email-form">
+                                      <div class="row gy-4">
+  
+                                          <div class="col-md-6 ">
+                                            <input [formControl]="file" type="text" class="form-control" placeholder="Nombre del documento" required>
+                                          </div>
+              
+                                          <div class="col-md-12 text-center">
+                                            <button (click)="BringDocument()">Buscar documento</button>
+                                          </div>
+
+                                          <div class="col-md-6 ">
+                                            <div class="mt-2" *ngFor="let dir of data; let i = index;" >
+                                              <a href="{{dir.DIR}}" target="_blank">{{ dir.NAME }}</a>
+                                            </div>
+                                          </div>
+                                      </div>
+                                  </form>
                                 </div>
                             </div>
                         </section>
@@ -92,4 +110,7 @@
             </div>
         </footer>
     </div>
+
+    
+
 </ng-template>
